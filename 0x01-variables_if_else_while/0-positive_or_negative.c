@@ -2,7 +2,7 @@
 #include<time.h>
 #include<stdio.h>
 
-/*
+/**
  * main - entry point
  *
  * Description: 'the program differentiates negative and positive numbers'
