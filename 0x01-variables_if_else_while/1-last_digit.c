@@ -1,12 +1,12 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<stdio.h>
 
 /**
  * main - This is the entry point
  *
  * Description: 'the program should have an output of a string`s last digit'
- * 
+ *
  * Return: Always 0 (Success)
  */
 
@@ -22,7 +22,7 @@ int main(void)
 	{
 		printf("Last digit of %d is %d and is greater than 5\n", n, ld);
 	}
-	else if (ld == 0)
+	if (ld == 0)
 	{
 		printf("Last digit of %d is %d and is 0\n", n, ld);
 	}
