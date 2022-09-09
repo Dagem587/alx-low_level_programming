@@ -5,6 +5,8 @@
 /*
  * main - entry point
  *
+ * Description: 'the program differentiates negative and positive numbers'
+ *
  * Return: Always 0 (Success)
  */
 
