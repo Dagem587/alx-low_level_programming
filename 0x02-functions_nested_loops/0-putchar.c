@@ -3,6 +3,8 @@
 /**
  * main - entry point
  *
+ * Description: Prints _putchar
+ *
  * Return: Always 0 (Success)
  */
 
