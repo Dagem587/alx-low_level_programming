@@ -1,31 +1,24 @@
 #include "main.h"
+
 /**
- *cap_string- converts small letters to cap
+ *leet- converts  letters to num
  *@s: checked
  *Return: s
  */
-char *cap_string(char *s)
+char *leet(char *s)
 {
-	int i, j, separatorFound;
+	int i, j;
 
-	separatorFound = 1;
+	char src[] = "aeotlAEOTL";
+	char dest[] = "4307143071";
 
-	for (i = 0; s[i]; ++i)
+
+	for (i = 0; *(s + i); i++)
 	{
-		if (separatorFound && s[i] >= 'a' && s[i] <= 'z')
+		for (j = 0; j < 10; j++)
 		{
-			s[i] = s[i] -  32;
-		}
-		separatorFound = 0;
-		for (j = 0; j < 12; j++)
-		{
-			if (s[i] == '\t' || s[i] == '\n' || s[i] == ','
-			    || s[i] == '\"' || s[i] == '.' || s[i] == '!' ||
-			    s[i] == '{' || s[i] == '}' || s[i] == '(' ||
-			    s[i] == ')' || s[i] == ' ' || s[i] == '?')
-			{
-				separatorFound = 1;
-			}
+			if (src[j] == *(s + i))
+				*(s + i) = dest[j];
 		}
 	}
 	return (s);
