@@ -1,24 +1,32 @@
 #include "main.h"
 /**
- * leet - encodes a string into 1337
- * @c: char to encode
- * Return: @c char
-*/
-char *leet(char *c)
+ *cap_string- converts small letters to cap
+ *@s: checked
+ *Return: s
+ */
+char *cap_string(char *s)
 {
-	int i;
-	int j;
-	char letters[] = "aeotl";
-	char up_letters[] = "AEOTL";
-	char numbers[] = "43071";
+	int i, j, separatorFound;
 
-	for (i = 0; c[i] != '\0'; i++)
+	separatorFound = 1;
+
+	for (i = 0; s[i]; ++i)
 	{
-		for (j = 0; letters[j] != '\0'; j++)
+		if (separatorFound && s[i] >= 'a' && s[i] <= 'z')
 		{
-			if (c[i] == letters[j] || c[i] == up_letters[j])
-				c[i] = numbers[j];
+			s[i] = s[i] -  32;
+		}
+		separatorFound = 0;
+		for (j = 0; j < 12; j++)
+		{
+			if (s[i] == '\t' || s[i] == '\n' || s[i] == ','
+			    || s[i] == '\"' || s[i] == '.' || s[i] == '!' ||
+			    s[i] == '{' || s[i] == '}' || s[i] == '(' ||
+			    s[i] == ')' || s[i] == ' ' || s[i] == '?')
+			{
+				separatorFound = 1;
+			}
 		}
 	}
-	return (c);
+	return (s);
 }
