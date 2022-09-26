@@ -1,21 +1,22 @@
 #include "main.h"
+
 /**
- * print_chessboard - function that locates a substring
- * @a: pointer to chessboard
- * Return: void
+ * print_chessboard - prints the chessboard
+ * @a: input pointer.
+ * Return: no return.
  */
 void print_chessboard(char (*a)[8])
 {
-	int i = 0;
+	unsigned int i, m = 0;
 
-	for (; i < 8; i++)
+	for (i = 0; i < 64; i++)
 	{
-		int j = 0;
-
-		for (; j < 8; j++)
+		if (i % 8 == 0 && i != 0)
 		{
-			_putchar(a[i][j]);
+			m = i;
+			_putchar('\n');
 		}
-		_putchar('\n');
+		_putchar(a[i / 8][i - m]);
 	}
+	_putchar('\n');
 }
