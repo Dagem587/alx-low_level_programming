@@ -1,23 +1,21 @@
 #include "main.h"
 
 /**
- * *_strchr - fills memory with a constant byte.
- * @s: pointer to put the constant
- * @c: constant
- * Return: s
+ * _memcpy - a function that copys memory area
+ * @dest: memory area destination to copy
+ * @src: memory area source to copy from
+ * @n: number of bytes
+ * Return: returns pointer to copy location
  */
-
-char *_strchr(char *s, char c)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	char *start = dest;
 
-	for (i = 0; s[i] >= '\0'  ; i++)
+	while (n--)
 	{
-		if (s[i] == c)
-		{
-			return (s + i);
-		}
+		*dest = *src;
+		src++;
+		dest++;
 	}
-
-	return ('\0');
+	return (start);
 }
