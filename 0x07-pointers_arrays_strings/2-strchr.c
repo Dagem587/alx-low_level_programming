@@ -1,31 +1,22 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * *_strspn - return the number of occurent of a string
- * @s: string to check
- * @accept: character to match
- * Return: int
+ * _strchr - a function that locates a character in a string.
+ * @s: an input string to search in
+ * @c: an input character to locate into string s
+ * Return: returns pointer to c position
  */
-
-
-unsigned int _strspn(char *s, char *accept)
+char *_strchr(char *s, char c)
 {
-	int i, j, cmpt = 0;
 
-	for (i = 0; s[i] >= '\0'; i++)
+	while (*s)
 	{
-		for (j = 0; accept[j] > '\0'; j++)
-		{
-			if (s[i] == accept[j])
-			{
-				cmpt++;
-				break;
-			}
-		}
-		if (accept[j] == '\0')
-		{
-			break;
-		}
+		if (c == *s)
+			return (s);
+		s++;
 	}
-	return (cmpt);
+	if (c == *s)
+		return (s);
+	return (NULL);
 }
