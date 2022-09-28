@@ -1,1 +1,1 @@
-This is a directory containing recursion projects
+This is a repository for low level programming
